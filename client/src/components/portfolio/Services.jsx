@@ -69,7 +69,7 @@ const cardVariants = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-dark-900/50 py-24 lg:py-32">
+    <section id="services" className="relative bg-dark-900/50 py-16 sm:py-24 lg:py-32">
       <div className="gradient-orb -left-40 top-1/2 h-80 w-80 bg-cyan-600" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -84,10 +84,10 @@ export default function Services() {
           <span className="text-sm font-semibold uppercase tracking-widest text-purple-400">
             What I Do
           </span>
-          <h2 className="font-display mt-3 text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             My Services
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:text-lg">
             I offer a wide range of web development services to bring your digital vision to life.
           </p>
         </motion.div>
@@ -102,7 +102,7 @@ export default function Services() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
-              className="glass-card card-premium group relative rounded-2xl p-8 glow-purple-hover"
+              className="glass-card card-premium group relative rounded-2xl p-6 sm:p-8 glow-purple-hover"
             >
               {/* Icon */}
               <div

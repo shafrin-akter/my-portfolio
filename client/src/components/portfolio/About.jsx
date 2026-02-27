@@ -3,7 +3,7 @@ import profilePhoto from "../../assets/WhatsApp Image 2026-02-28 at 12.55.32 AM.
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 lg:py-32">
+    <section id="about" className="relative py-16 sm:py-24 lg:py-32">
       {/* Background accent */}
       <div className="gradient-orb -right-40 top-20 h-80 w-80 bg-purple-600" />
 
@@ -19,7 +19,7 @@ export default function About() {
           <span className="text-sm font-semibold uppercase tracking-widest text-purple-400">
             About Me
           </span>
-          <h2 className="font-display mt-3 text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Get to Know Me
           </h2>
         </motion.div>
@@ -66,17 +66,17 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+            <h3 className="font-display text-xl font-bold text-white sm:text-2xl md:text-3xl">
               A passionate <span className="gradient-text">Web Developer</span>{" "}
               based in Bangladesh
             </h3>
-            <p className="mt-6 text-lg leading-relaxed text-slate-400">
+            <p className="mt-4 text-base leading-relaxed text-slate-400 sm:mt-6 sm:text-lg">
               I am Shafrin Akter, a dedicated web developer with a passion for
               creating visually stunning and highly functional websites. I
               specialize in front-end development, Shopify theme development,
               and page builder customization.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-slate-400">
+            <p className="mt-3 text-base leading-relaxed text-slate-400 sm:mt-4 sm:text-lg">
               My goal is to help businesses establish a strong online presence
               by delivering clean code, responsive designs, and pixel-perfect
               user experiences that convert visitors into customers.
@@ -101,7 +101,7 @@ export default function About() {
               href="https://drive.google.com/uc?export=download&id=1B_bw6psFd3lDGWU7CFAhtjuu3UOZFlHJ"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-3.5 font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-white sm:mt-10 sm:px-8 sm:py-3.5 sm:text-base transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
             >
               Download CV
               <svg

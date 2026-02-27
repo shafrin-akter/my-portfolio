@@ -45,12 +45,12 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between sm:h-20">
           {/* Logo */}
           <a
             href="#home"
             onClick={(e) => handleClick(e, '#home')}
-            className="font-display text-2xl font-bold tracking-tight"
+            className="font-display text-xl font-bold tracking-tight sm:text-2xl"
           >
             <span className="gradient-text">Shafrin</span>
             <span className="text-white">.dev</span>

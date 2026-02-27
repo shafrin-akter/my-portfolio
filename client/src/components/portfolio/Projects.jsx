@@ -64,7 +64,7 @@ const cardVariants = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 lg:py-32">
+    <section id="projects" className="relative py-16 sm:py-24 lg:py-32">
       <div className="gradient-orb -right-40 bottom-20 h-80 w-80 bg-purple-600" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -79,10 +79,10 @@ export default function Projects() {
           <span className="text-sm font-semibold uppercase tracking-widest text-purple-400">
             Portfolio
           </span>
-          <h2 className="font-display mt-3 text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Featured Projects
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:text-lg">
             Here are some of the projects I have worked on. Each one was crafted
             with attention to detail and performance.
           </p>
@@ -134,7 +134,7 @@ export default function Projects() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <h3 className="font-display text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
                   {project.title}
                 </h3>

@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative bg-dark-900/50 py-24 lg:py-32">
+    <section id="contact" className="relative bg-dark-900/50 py-16 sm:py-24 lg:py-32">
       <div className="gradient-orb left-1/4 top-0 h-80 w-80 bg-purple-600" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -102,10 +102,10 @@ export default function Contact() {
           <span className="text-sm font-semibold uppercase tracking-widest text-purple-400">
             Contact
           </span>
-          <h2 className="font-display mt-3 text-4xl font-bold text-white sm:text-5xl">
+          <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Let&apos;s Work Together
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:text-lg">
             Have a project in mind? Let&apos;s discuss how I can help bring your ideas to life.
           </p>
         </motion.div>
@@ -179,7 +179,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card rounded-2xl p-8 lg:col-span-3"
+            className="glass-card rounded-2xl p-5 sm:p-8 lg:col-span-3"
           >
             <div className="grid gap-6 sm:grid-cols-2">
               <div>

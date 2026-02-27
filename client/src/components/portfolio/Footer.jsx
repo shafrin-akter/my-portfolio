@@ -73,7 +73,7 @@ export default function Footer() {
           </motion.a>
 
           {/* Nav links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6">
+          <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {footerLinks.map((link) => (
               <a
                 key={link.name}

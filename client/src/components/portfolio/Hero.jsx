@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="gradient-orb -bottom-40 -right-40 h-96 w-96 bg-cyan-600" />
       <div className="gradient-orb top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 bg-purple-500 opacity-10" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 text-center sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
         >
           Hi, I am{' '}
           <span className="gradient-text">Shafrin&nbsp;Akter</span>
@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-slate-400 sm:text-xl lg:text-2xl"
+          className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:mt-6 sm:text-xl lg:text-2xl"
         >
           I craft beautiful, high-performance websites and Shopify stores
           that help businesses grow online.
@@ -58,7 +58,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="btn-shine group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+            className="btn-shine group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-3 text-base font-semibold text-white transition-all sm:px-8 sm:py-4 sm:text-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
           >
             View My Work
             <svg
@@ -77,7 +77,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-white transition-all sm:px-8 sm:py-4 sm:text-lg hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95"
           >
             Get in Touch
           </a>
@@ -88,7 +88,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
-          className="mt-20 grid grid-cols-2 gap-8 sm:grid-cols-4"
+          className="mt-12 grid grid-cols-2 gap-4 sm:mt-20 sm:gap-8 sm:grid-cols-4"
         >
           {[
             { number: '50+', label: 'Projects Completed' },
@@ -97,7 +97,7 @@ export default function Hero() {
             { number: '100%', label: 'Client Satisfaction' },
           ].map((stat) => (
             <div key={stat.label} className="stat-hover text-center rounded-xl p-4">
-              <div className="stat-number font-display text-3xl font-bold text-white sm:text-4xl transition-all duration-300">
+              <div className="stat-number font-display text-2xl font-bold text-white sm:text-3xl md:text-4xl transition-all duration-300">
                 {stat.number}
               </div>
               <div className="mt-1 text-sm text-slate-400">{stat.label}</div>
