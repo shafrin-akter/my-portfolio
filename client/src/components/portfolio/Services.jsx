@@ -102,11 +102,11 @@ export default function Services() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
-              className="glass-card group relative rounded-2xl p-8 transition-all duration-500 glow-purple-hover"
+              className="glass-card card-premium group relative rounded-2xl p-8 glow-purple-hover"
             >
               {/* Icon */}
               <div
-                className={`mb-6 inline-flex rounded-xl bg-gradient-to-br ${service.gradient} p-3.5 text-white shadow-lg`}
+                className={`mb-6 inline-flex rounded-xl bg-gradient-to-br ${service.gradient} p-3.5 text-white shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
               >
                 {service.icon}
               </div>

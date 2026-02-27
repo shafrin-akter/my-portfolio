@@ -58,7 +58,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+            className="btn-shine group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
           >
             View My Work
             <svg
@@ -96,8 +96,8 @@ export default function Hero() {
             { number: '3+', label: 'Years Experience' },
             { number: '100%', label: 'Client Satisfaction' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-display text-3xl font-bold text-white sm:text-4xl">
+            <div key={stat.label} className="stat-hover text-center rounded-xl p-4">
+              <div className="stat-number font-display text-3xl font-bold text-white sm:text-4xl transition-all duration-300">
                 {stat.number}
               </div>
               <div className="mt-1 text-sm text-slate-400">{stat.label}</div>

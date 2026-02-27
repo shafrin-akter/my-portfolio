@@ -33,15 +33,19 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="relative mx-auto w-full max-w-md lg:max-w-none"
           >
-            <div className="relative overflow-hidden rounded-2xl">
-              {/* Decorative border */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-purple-500 to-cyan-500 opacity-20" />
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+            <div className="group/photo relative overflow-hidden rounded-2xl">
+              {/* Animated gradient border */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-purple-500 via-cyan-500 to-purple-500 opacity-20 transition-all duration-700 group-hover/photo:opacity-50 group-hover/photo:blur-sm animated-border" />
+              <div className="img-hover-zoom relative aspect-[4/5] rounded-2xl overflow-hidden">
                 <img
                   src={profilePhoto}
                   alt="Shafrin Akter"
                   className="h-full w-full object-cover"
                 />
+                {/* Shimmer overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/0 via-white/0 to-cyan-500/0 transition-all duration-700 group-hover/photo:from-purple-500/10 group-hover/photo:via-white/5 group-hover/photo:to-cyan-500/10" />
+                {/* Bottom vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover/photo:opacity-100" />
               </div>
             </div>
             {/* Decorative dots */}

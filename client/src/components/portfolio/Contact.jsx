@@ -130,7 +130,7 @@ export default function Contact() {
             <div className="mt-8 space-y-6">
               {contactInfo.map((info) => (
                 <div key={info.label} className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 transition-all duration-300 hover:bg-purple-500/20 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20">
                     {info.icon}
                   </div>
                   <div>
@@ -163,7 +163,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-slate-400 border border-white/5 transition-all hover:bg-purple-500/20 hover:text-purple-400 hover:border-purple-500/20 hover:scale-110"
+                    className="social-pop flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-slate-400 border border-white/5 hover:bg-purple-500/20 hover:text-purple-400 hover:border-purple-500/20"
                   >
                     {social.icon}
                   </a>
@@ -194,7 +194,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="John Doe"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500 transition-all"
+                  className="input-premium w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500"
                 />
               </div>
               <div>
@@ -209,7 +209,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500 transition-all"
+                  className="input-premium w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500"
                 />
               </div>
             </div>
@@ -226,13 +226,13 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Tell me about your project..."
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500 transition-all"
+                className="input-premium w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-6 w-full rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-4 font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-[1.02] active:scale-[0.98]"
+              className="btn-shine mt-6 w-full rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-4 font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-[1.02] active:scale-[0.98]"
             >
               Send Message
             </button>

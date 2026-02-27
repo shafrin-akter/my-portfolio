@@ -98,7 +98,7 @@ export default function Projects() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="glass-card group relative overflow-hidden rounded-2xl transition-all duration-500 glow-purple-hover"
+              className="glass-card card-premium group relative overflow-hidden rounded-2xl glow-purple-hover"
             >
               {/* Image */}
               <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-dark-800 to-dark-700">

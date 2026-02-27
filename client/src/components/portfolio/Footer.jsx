@@ -79,7 +79,7 @@ export default function Footer() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className="text-sm text-slate-400 transition-colors hover:text-white"
+                className="nav-link-hover text-sm text-slate-400 transition-colors hover:text-white"
               >
                 {link.name}
               </a>
@@ -95,7 +95,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-slate-400 transition-all hover:bg-purple-500/20 hover:text-purple-400 hover:scale-110"
+                className="social-pop flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:bg-purple-500/20 hover:text-purple-400"
               >
                 {social.icon}
               </a>
