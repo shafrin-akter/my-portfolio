@@ -55,6 +55,22 @@ export default function About() {
                 <div className="font-display text-2xl font-bold gradient-text">2+</div>
                 <div className="text-[11px] font-medium text-slate-400">Years Exp.</div>
               </motion.div>
+
+              {/* Shopify Expert badge */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="absolute -left-2 -top-3 rounded-full border border-green-500/20 bg-dark-950/90 px-4 py-2.5 backdrop-blur-xl sm:-left-6"
+              >
+                <div className="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 text-green-400" fill="currentColor">
+                    <path d="M15.34 3.27c-.07-.04-.15-.03-.22.01-.06.04-1.02 1.6-1.1 1.72-.12-.45-.55-1.27-1.13-1.64-.18-.11-.45-.06-.54.14-.06.13-.47 1.4-.63 2.09-.24 1.04-.18 1.91.18 2.59l-.03.02-3.6 11.03c-.03.1.02.21.13.24l2.2.64c.11.03.22-.03.24-.14l1.78-6.47c.16.08.41.16.73.16.95 0 1.86-.61 2.57-1.72.76-1.19 1.18-2.82 1.18-4.59 0-1.61-.36-2.88-.97-3.68-.06-.07-.14-.12-.22-.15-.22-.07-.4.08-.57.24-.28.27-.59.87-.59.87s.19-.95.19-1.57c0-.27-.11-.48-.31-.58l-.07-.03-.02-.01-.05-.02-.16-.07s.02-.05.01-.07z"/>
+                  </svg>
+                  <span className="text-xs font-semibold text-green-400">Shopify Expert</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -66,16 +82,6 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="lg:col-span-3"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-3 py-1">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-400" />
-                </span>
-                <span className="text-xs font-medium text-green-400">Open to Projects</span>
-              </div>
-            </div>
-
             <h3 className="font-display text-2xl font-bold text-white sm:text-3xl lg:text-4xl leading-tight">
               I&apos;m <span className="gradient-text">Shafrin Akter</span>
             </h3>
