@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 const contactInfo = [
   {
     label: 'Email',
-    value: 'shafrinakter@gmail.com',
-    href: 'mailto:shafrinakter@gmail.com',
+    value: 'shafrinakterr@gmail.com',
+    href: 'mailto:shafrinakterr@gmail.com',
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -74,16 +75,46 @@ const socials = [
   },
 ];
 
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormData({ name: '', email: '', message: '' });
+    setSending(true);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New message from ${formData.name} — Portfolio Contact`,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error('Something went wrong. Please try again.');
+      }
+    } catch {
+      toast.error('Failed to send message. Please try again later.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -237,9 +268,10 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="btn-shine mt-6 w-full rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.01] active:scale-[0.99]"
+              disabled={sending}
+              className="btn-shine mt-6 w-full rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              Send Message
+              {sending ? 'Sending...' : 'Send Message'}
             </button>
           </motion.form>
         </div>
