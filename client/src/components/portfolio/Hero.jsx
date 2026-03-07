@@ -47,7 +47,7 @@ export default function Hero() {
           <span className="gradient-text">Shopify Stores</span>
           <br />
           <span className="text-white/95">That </span>
-          <span className="gradient-text">Convert</span>
+          <span className="gradient-text">Actually Sell</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -57,9 +57,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-8 sm:text-lg lg:text-xl"
         >
-          Hi, I&apos;m <span className="text-white font-medium">Shafrin Akter</span> — a Shopify Developer
-          specializing in custom theme development, page builder customization, and
-          high-performance e-commerce solutions that drive real business results.
+          Shopify Front-End Developer with 2+ years of experience turning
+          e-commerce ideas into high-converting, pixel-perfect online stores —
+          built with clean code, fast performance, and real business results.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -100,9 +100,9 @@ export default function Hero() {
           className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-3 sm:mt-24 sm:grid-cols-4 sm:gap-6"
         >
           {[
-            { number: '50+', label: 'Shopify Projects' },
-            { number: '30+', label: 'Happy Clients' },
-            { number: '3+', label: 'Years Experience' },
+            { number: '20+', label: 'Shopify Projects' },
+            { number: '15+', label: 'Happy Clients' },
+            { number: '2+', label: 'Years Experience' },
             { number: '100%', label: 'Satisfaction Rate' },
           ].map((stat) => (
             <div
