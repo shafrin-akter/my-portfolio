@@ -10,6 +10,7 @@ import Testimonials from '../components/portfolio/Testimonials';
 import Contact from '../components/portfolio/Contact';
 import Footer from '../components/portfolio/Footer';
 import MouseGlow from '../components/portfolio/MouseGlow';
+import WhatsAppButton from '../components/portfolio/WhatsAppButton';
 
 export default function HomePage() {
   return (
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Testimonials />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
