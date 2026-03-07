@@ -1,106 +1,120 @@
 import { motion } from 'framer-motion';
 
 export default function Hero() {
+  const scrollTo = (id) => {
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-grid"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Gradient orbs */}
-      <div className="gradient-orb -top-40 -left-40 h-96 w-96 bg-purple-600" />
-      <div className="gradient-orb -bottom-40 -right-40 h-96 w-96 bg-cyan-600" />
-      <div className="gradient-orb top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 bg-purple-500 opacity-10" />
+      {/* Subtle grid */}
+      <div className="absolute inset-0 bg-grid opacity-60" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
+      {/* Gradient orbs */}
+      <div className="gradient-orb -top-32 -left-32 h-[500px] w-[500px] bg-purple-600 opacity-10" />
+      <div className="gradient-orb -bottom-32 -right-32 h-[400px] w-[400px] bg-cyan-600 opacity-8" />
+      <div className="gradient-orb top-1/3 right-1/4 h-48 w-48 bg-purple-400 opacity-5" />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-dark-950/40" />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-4 py-24 text-center sm:px-6 sm:py-32 lg:px-8">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-5 py-2 text-sm text-purple-300"
+          className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-green-500/20 bg-green-500/8 px-5 py-2.5 text-sm text-green-300/90"
         >
-          <span className="inline-block h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-          Available for freelance work
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+          </span>
+          Available for Shopify Projects
         </motion.div>
 
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          Hi, I am{' '}
-          <span className="gradient-text">Shafrin&nbsp;Akter</span>
+          <span className="text-white/95">I Build </span>
+          <span className="gradient-text">Shopify Stores</span>
+          <br />
+          <span className="text-white/95">That </span>
+          <span className="gradient-text">Convert</span>
         </motion.h1>
 
-        {/* Tagline */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:mt-6 sm:text-xl lg:text-2xl"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-400 sm:mt-8 sm:text-lg lg:text-xl"
         >
-          I craft beautiful, high-performance websites and Shopify stores
-          that help businesses grow online.
+          Hi, I&apos;m <span className="text-white font-medium">Shafrin Akter</span> — a Shopify Developer
+          specializing in custom theme development, page builder customization, and
+          high-performance e-commerce solutions that drive real business results.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:mt-12"
         >
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="btn-shine group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-3 text-base font-semibold text-white transition-all sm:px-8 sm:py-4 sm:text-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+          <button
+            onClick={() => scrollTo('#projects')}
+            className="btn-shine group relative inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-7 py-3.5 text-base font-semibold text-white transition-all sm:px-8 sm:py-4 hover:shadow-xl hover:shadow-purple-500/20 hover:scale-105 active:scale-95"
           >
-            View My Work
+            View My Projects
             <svg
-              className="h-5 w-5 transition-transform group-hover:translate-x-1"
+              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth={2}
+              strokeWidth={2.5}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-white transition-all sm:px-8 sm:py-4 sm:text-lg hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95"
+          </button>
+          <button
+            onClick={() => scrollTo('#contact')}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-7 py-3.5 text-base font-semibold text-white/90 transition-all sm:px-8 sm:py-4 hover:bg-white/[0.07] hover:border-white/15 hover:scale-105 active:scale-95"
           >
-            Get in Touch
-          </a>
+            Let&apos;s Talk
+          </button>
         </motion.div>
 
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
-          className="mt-12 grid grid-cols-2 gap-4 sm:mt-20 sm:gap-8 sm:grid-cols-4"
+          transition={{ duration: 0.7, delay: 0.65 }}
+          className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-3 sm:mt-24 sm:grid-cols-4 sm:gap-6"
         >
           {[
-            { number: '50+', label: 'Projects Completed' },
+            { number: '50+', label: 'Shopify Projects' },
             { number: '30+', label: 'Happy Clients' },
             { number: '3+', label: 'Years Experience' },
-            { number: '100%', label: 'Client Satisfaction' },
+            { number: '100%', label: 'Satisfaction Rate' },
           ].map((stat) => (
-            <div key={stat.label} className="stat-hover text-center rounded-xl p-4">
-              <div className="stat-number font-display text-2xl font-bold text-white sm:text-3xl md:text-4xl transition-all duration-300">
+            <div
+              key={stat.label}
+              className="stat-hover rounded-2xl border border-white/5 bg-white/[0.02] p-4 text-center sm:p-5"
+            >
+              <div className="stat-number font-display text-2xl font-bold text-white sm:text-3xl">
                 {stat.number}
               </div>
-              <div className="mt-1 text-sm text-slate-400">{stat.label}</div>
+              <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500 sm:text-sm">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>
@@ -116,9 +130,9 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex h-10 w-6 items-start justify-center rounded-full border border-white/20 p-1.5"
+          className="flex h-10 w-6 items-start justify-center rounded-full border border-white/15 p-1.5"
         >
-          <div className="h-2 w-1 rounded-full bg-white/60" />
+          <div className="h-2 w-1 rounded-full bg-white/50" />
         </motion.div>
       </motion.div>
     </section>

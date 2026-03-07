@@ -1,8 +1,12 @@
 import Navbar from '../components/portfolio/Navbar';
 import Hero from '../components/portfolio/Hero';
 import About from '../components/portfolio/About';
-import Services from '../components/portfolio/Services';
+import Skills from '../components/portfolio/Skills';
+import Tools from '../components/portfolio/Tools';
 import Projects from '../components/portfolio/Projects';
+import CaseStudies from '../components/portfolio/CaseStudies';
+import WhyMe from '../components/portfolio/WhyMe';
+import Testimonials from '../components/portfolio/Testimonials';
 import Contact from '../components/portfolio/Contact';
 import Footer from '../components/portfolio/Footer';
 import MouseGlow from '../components/portfolio/MouseGlow';
@@ -14,8 +18,12 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      <Skills />
+      <Tools />
       <Projects />
+      <CaseStudies />
+      <WhyMe />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

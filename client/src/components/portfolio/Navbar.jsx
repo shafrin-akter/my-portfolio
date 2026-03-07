@@ -4,17 +4,30 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
+  { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = navLinks.map((l) => l.href.slice(1));
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.getBoundingClientRect().top <= 150) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -40,80 +53,91 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "nav-glass shadow-lg shadow-black/20" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "nav-glass shadow-2xl shadow-purple-500/5"
+            : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between sm:h-20">
             {/* Logo */}
             <a
               href="#home"
               onClick={(e) => handleClick(e, "#home")}
-              className="font-display text-xl font-bold tracking-tight sm:text-2xl"
+              className="group font-display text-xl font-bold tracking-tight sm:text-2xl"
             >
-              <span className="gradient-text">Shafrin</span>
-              <span className="text-white">.dev</span>
+              <span className="gradient-text transition-all duration-300 group-hover:opacity-80">
+                Shafrin
+              </span>
+              <span className="text-white/90">.dev</span>
             </a>
 
             {/* Desktop links */}
-            <div className="hidden items-center gap-1 lg:flex">
+            <div className="hidden items-center gap-0.5 lg:flex">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleClick(e, link.href)}
-                  className="nav-link-hover rounded-lg px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:text-white hover:bg-white/5"
+                  className={`relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all duration-300 ${
+                    activeSection === link.href.slice(1)
+                      ? "text-white"
+                      : "text-slate-400 hover:text-white"
+                  }`}
                 >
                   {link.name}
+                  {activeSection === link.href.slice(1) && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="absolute inset-0 -z-10 rounded-lg bg-white/[0.06] border border-white/[0.08]"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    />
+                  )}
                 </a>
               ))}
               <a
                 href="#contact"
                 onClick={(e) => handleClick(e, "#contact")}
-                className="btn-shine ml-4 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+                className="btn-shine ml-4 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
               >
                 Hire Me
               </a>
             </div>
 
-            {/* Hamburger toggle — mobile & tablet only */}
+            {/* Hamburger toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              style={{
-                alignItems: "center",
-                justifyContent: "center",
-                width: 44,
-                height: 44,
-                borderRadius: 8,
-                border: "1px solid rgba(255,255,255,0.15)",
-                background: "rgba(255,255,255,0.08)",
-                position: "relative",
-                zIndex: 9999,
-              }}
-              className="flex lg:hidden"
+              className="flex items-center justify-center w-11 h-11 rounded-xl border border-white/10 bg-white/5 relative z-[9999] lg:hidden"
               aria-label="Toggle menu"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
+              <div className="flex flex-col gap-1.5">
+                <span
+                  className={`block h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
+                    mobileOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
+                    mobileOpen ? "opacity-0 scale-0" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-5 bg-white rounded-full transition-all duration-300 ${
+                    mobileOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile menu - rendered outside the nav to avoid z-index issues */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -121,39 +145,22 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-6 bg-dark-950/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-2 bg-dark-950/98 backdrop-blur-2xl lg:hidden"
           >
-            {/* Close button inside overlay */}
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5"
-              aria-label="Close menu"
-            >
-              <svg
-                className="h-6 w-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
             {navLinks.map((link, i) => (
               <motion.a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: i * 0.1 }}
-                className="font-display text-2xl font-semibold text-white transition-colors hover:text-purple-400"
+                transition={{ delay: i * 0.06 }}
+                className={`font-display text-2xl font-semibold transition-colors px-6 py-2.5 rounded-2xl ${
+                  activeSection === link.href.slice(1)
+                    ? "text-white bg-white/5"
+                    : "text-slate-400 hover:text-white"
+                }`}
               >
                 {link.name}
               </motion.a>
@@ -161,11 +168,11 @@ export default function Navbar() {
             <motion.a
               href="#contact"
               onClick={(e) => handleClick(e, "#contact")}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 0.5 }}
-              className="mt-4 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-3 text-lg font-semibold text-white"
+              className="mt-6 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-10 py-4 text-lg font-semibold text-white"
             >
               Hire Me
             </motion.a>

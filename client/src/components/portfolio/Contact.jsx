@@ -7,7 +7,7 @@ const contactInfo = [
     value: 'shafrinakter@gmail.com',
     href: 'mailto:shafrinakter@gmail.com',
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
       </svg>
     ),
@@ -17,7 +17,7 @@ const contactInfo = [
     value: 'Bangladesh',
     href: null,
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
       </svg>
@@ -28,7 +28,7 @@ const contactInfo = [
     value: 'Open for freelance',
     href: null,
     icon: (
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -87,10 +87,10 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative bg-dark-900/50 py-16 sm:py-24 lg:py-32">
-      <div className="gradient-orb left-1/4 top-0 h-80 w-80 bg-purple-600" />
+    <section id="contact" className="relative bg-dark-900/30 py-20 sm:py-28 lg:py-36">
+      <div className="gradient-orb left-1/4 top-0 h-80 w-80 bg-purple-600 opacity-8" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -99,18 +99,18 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="text-sm font-semibold uppercase tracking-widest text-purple-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400/80">
             Contact
           </span>
-          <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+          <h2 className="font-display mt-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Let&apos;s Work Together
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-base text-slate-400 sm:text-lg">
             Have a project in mind? Let&apos;s discuss how I can help bring your ideas to life.
           </p>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-5">
+        <div className="grid gap-8 lg:grid-cols-5 lg:gap-12">
           {/* Left: Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -119,31 +119,36 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <h3 className="font-display text-2xl font-bold text-white">
+            <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
               Get in Touch
             </h3>
-            <p className="mt-4 text-slate-400 leading-relaxed">
+            <p className="mt-3 text-slate-400 leading-relaxed">
               I am always open to discussing new projects, creative ideas, or opportunities
               to be part of your vision.
             </p>
 
-            <div className="mt-8 space-y-6">
+            <div className="mt-8 space-y-4">
               {contactInfo.map((info) => (
-                <div key={info.label} className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 transition-all duration-300 hover:bg-purple-500/20 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20">
+                <div
+                  key={info.label}
+                  className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/2 p-4 transition-all duration-300 hover:border-purple-500/15 hover:bg-white/4"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-500/10 text-purple-400">
                     {info.icon}
                   </div>
                   <div>
-                    <span className="text-sm text-slate-500">{info.label}</span>
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                      {info.label}
+                    </span>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="block font-medium text-white hover:text-purple-400 transition-colors"
+                        className="block text-sm font-medium text-white/90 hover:text-purple-400 transition-colors"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="font-medium text-white">{info.value}</p>
+                      <p className="text-sm font-medium text-white/90">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -151,11 +156,11 @@ export default function Contact() {
             </div>
 
             {/* Social links */}
-            <div className="mt-10">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-slate-500">
+            <div className="mt-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">
                 Follow Me
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-2.5">
                 {socials.map((social) => (
                   <a
                     key={social.name}
@@ -163,7 +168,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className="social-pop flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-slate-400 border border-white/5 hover:bg-purple-500/20 hover:text-purple-400 hover:border-purple-500/20"
+                    className="social-pop flex h-10 w-10 items-center justify-center rounded-xl border border-white/5 bg-white/3 text-slate-400 hover:bg-purple-500/15 hover:text-purple-400 hover:border-purple-500/20"
                   >
                     {social.icon}
                   </a>
@@ -178,12 +183,12 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card rounded-2xl p-5 sm:p-8 lg:col-span-3"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="rounded-2xl border border-white/5 bg-white/2 p-5 sm:p-8 lg:col-span-3"
           >
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300/80">
                   Your Name
                 </label>
                 <input
@@ -194,11 +199,11 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="John Doe"
-                  className="input-premium w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500"
+                  className="input-premium w-full rounded-xl border border-white/8 bg-white/3 px-4 py-3.5 text-sm text-white placeholder-slate-500/70"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300/80">
                   Your Email
                 </label>
                 <input
@@ -209,13 +214,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
-                  className="input-premium w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500"
+                  className="input-premium w-full rounded-xl border border-white/8 bg-white/3 px-4 py-3.5 text-sm text-white placeholder-slate-500/70"
                 />
               </div>
             </div>
 
-            <div className="mt-6">
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300">
+            <div className="mt-5">
+              <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300/80">
                 Message
               </label>
               <textarea
@@ -226,13 +231,13 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Tell me about your project..."
-                className="input-premium w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder-slate-500"
+                className="input-premium w-full resize-none rounded-xl border border-white/8 bg-white/3 px-4 py-3.5 text-sm text-white placeholder-slate-500/70"
               />
             </div>
 
             <button
               type="submit"
-              className="btn-shine mt-6 w-full rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 px-8 py-4 font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/25 hover:scale-[1.02] active:scale-[0.98]"
+              className="btn-shine mt-6 w-full rounded-xl bg-gradient-to-r from-purple-600 to-purple-500 px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/20 hover:scale-[1.01] active:scale-[0.99]"
             >
               Send Message
             </button>

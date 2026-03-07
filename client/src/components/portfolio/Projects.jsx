@@ -2,72 +2,82 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "E-Commerce Shopify Store",
-    category: "Shopify",
+    title: "Premium Fashion Shopify Store",
+    category: "Shopify Theme",
     description:
-      "A fully custom Shopify theme with dynamic sections, product filtering, and optimized checkout flow.",
+      "A fully custom Shopify theme for a luxury fashion brand with dynamic filtering, mega menu, quick-view modals, and optimized checkout flow that increased conversions by 35%.",
     tech: ["Shopify", "Liquid", "JavaScript", "CSS"],
-    image:
-      "https://cdn.twocontinents.com/hfpqy_V7_B_IMG_Dubai_UAE_1200x800_e1936b3330.jpg",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=450&fit=crop",
+    liveUrl: "#",
+    caseStudy: true,
   },
   {
-    title: "Business Landing Page",
-    category: "Web Design",
-    description:
-      "A modern, responsive landing page for a SaaS company with smooth animations and lead capture form.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    image:
-      "https://cdn.twocontinents.com/hfpqy_V7_B_IMG_Dubai_UAE_1200x800_e1936b3330.jpg",
-  },
-  {
-    title: "Portfolio Website",
-    category: "Web Design",
-    description:
-      "A creative portfolio website with unique scroll-based animations and a minimal aesthetic.",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    image: null,
-  },
-  {
-    title: "Elementor Custom Sections",
+    title: "Health & Wellness Store",
     category: "Page Builder",
     description:
-      "Custom Elementor widgets and sections for a real estate website with advanced filtering.",
-    tech: ["WordPress", "Elementor", "CSS", "PHP"],
-    image: null,
+      "High-converting Shopify store built with GemPages featuring custom product bundles, subscription options, and a loyalty rewards landing page.",
+    tech: ["Shopify", "GemPages", "Liquid", "JavaScript"],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop",
+    liveUrl: "#",
+    caseStudy: true,
   },
   {
-    title: "Shopify Product Configurator",
-    category: "Shopify",
+    title: "Artisan Jewelry E-Commerce",
+    category: "Shopify Theme",
     description:
-      "An interactive product customizer for a print-on-demand Shopify store with live previews.",
-    tech: ["Shopify", "JavaScript", "Liquid"],
-    image: null,
+      "Custom Shopify theme for a handcrafted jewelry brand with 360° product views, size guides, and a gift registry feature.",
+    tech: ["Shopify", "Liquid", "Tailwind CSS", "Alpine.js"],
+    image: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=800&h=450&fit=crop",
+    liveUrl: "#",
+    caseStudy: false,
   },
   {
-    title: "Restaurant Website",
+    title: "Fitness Equipment Store",
+    category: "Page Builder",
+    description:
+      "Replo-powered landing pages and product showcase for a fitness equipment brand, featuring comparison tables and video testimonials.",
+    tech: ["Shopify", "Replo", "JavaScript", "CSS"],
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=450&fit=crop",
+    liveUrl: "#",
+    caseStudy: false,
+  },
+  {
+    title: "Gourmet Food Marketplace",
+    category: "Shopify Theme",
+    description:
+      "Multi-vendor Shopify store for artisan food products with advanced filtering, recipe integration, and subscription box functionality.",
+    tech: ["Shopify", "Liquid", "React", "Node.js"],
+    image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&h=450&fit=crop",
+    liveUrl: "#",
+    caseStudy: true,
+  },
+  {
+    title: "SaaS Landing Page",
     category: "Web Design",
     description:
-      "A visually rich restaurant website with online menu, reservation system, and Google Maps integration.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    image: null,
+      "A modern, responsive landing page for a SaaS product featuring smooth scroll animations, pricing tables, and lead capture form.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop",
+    liveUrl: "#",
+    caseStudy: false,
   },
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
+    transition: { duration: 0.5, delay: i * 0.08, ease: "easeOut" },
   }),
 };
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-16 sm:py-24 lg:py-32">
-      <div className="gradient-orb -right-40 bottom-20 h-80 w-80 bg-purple-600" />
+    <section id="projects" className="relative py-20 sm:py-28 lg:py-36">
+      <div className="gradient-orb -right-40 bottom-20 h-80 w-80 bg-purple-600 opacity-8" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,20 +86,20 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="text-sm font-semibold uppercase tracking-widest text-purple-400">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-400/80">
             Portfolio
           </span>
-          <h2 className="font-display mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+          <h2 className="font-display mt-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Featured Projects
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-400 sm:text-lg">
-            Here are some of the projects I have worked on. Each one was crafted
-            with attention to detail and performance.
+          <p className="mx-auto mt-5 max-w-xl text-base text-slate-400 sm:text-lg">
+            Real Shopify stores and web projects I&apos;ve built — each crafted for
+            performance, conversions, and exceptional user experience.
           </p>
         </motion.div>
 
         {/* Projects grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -98,80 +108,65 @@ export default function Projects() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="glass-card card-premium group relative overflow-hidden rounded-2xl glow-purple-hover"
+              className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/2 transition-all duration-500 hover:border-white/10 hover:shadow-xl hover:shadow-purple-500/10"
             >
               {/* Image */}
-              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-dark-800 to-dark-700">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg
-                      className="h-12 w-12 text-slate-600 transition-colors group-hover:text-purple-500/50"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={1}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-                      />
-                    </svg>
-                  </div>
-                )}
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 {/* Category badge */}
-                <div className="absolute top-4 left-4 rounded-full bg-purple-500/20 px-3 py-1 text-xs font-medium text-purple-300 backdrop-blur-sm border border-purple-500/20">
+                <div className="absolute top-3 left-3 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/90 backdrop-blur-md border border-white/10">
                   {project.category}
                 </div>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                {/* Hover overlay with buttons */}
+                <div className="absolute inset-0 flex items-center justify-center gap-3 bg-dark-950/70 opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:opacity-100">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-semibold text-dark-950 transition-transform hover:scale-105"
+                  >
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                    Live Demo
+                  </a>
+                  {project.caseStudy && (
+                    <button
+                      onClick={() => document.querySelector('#case-studies')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white/20"
+                    >
+                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                      </svg>
+                      Case Study
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Content */}
-              <div className="p-4 sm:p-6">
-                <h3 className="font-display text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+              <div className="p-5 sm:p-6">
+                <h3 className="font-display text-base font-bold text-white/95 sm:text-lg transition-colors duration-300 group-hover:text-purple-300">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+                <p className="mt-2 text-sm text-slate-400/90 leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Tech tags */}
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 border border-white/5"
+                      className="rounded-full bg-purple-500/8 px-2.5 py-0.5 text-xs font-medium text-purple-300/80 border border-purple-500/10"
                     >
                       {t}
                     </span>
                   ))}
-                </div>
-
-                {/* Links */}
-                <div className="mt-5 flex items-center gap-4">
-                  <button className="flex items-center gap-1.5 text-sm font-medium text-purple-400 transition-colors hover:text-purple-300">
-                    View Project
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                      />
-                    </svg>
-                  </button>
                 </div>
               </div>
             </motion.div>
